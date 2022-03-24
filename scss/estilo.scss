@@ -1,0 +1,249 @@
+@import "reset";
+@import "style_fuente";
+@import "iconos";
+
+$color-letra: #411366;
+$color-letra-pie: #839689;
+$color-fondo: rgba(99, 219, 213, 0.637);
+$color-fondo2: rgba(212, 167, 230, 0.8);
+$color-menuHamb: rgba(73, 73, 73, 0.747);
+$ancho: 80%;
+$letra-familia: Arial, Helvetica, sans-serif;
+$letra-titulos: lobster;
+$color-pie: grey;
+
+h1{
+    font-size: 4em;
+    padding: 3rem;
+}
+h2{
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+    font-family: $letra-titulos;
+
+    @media screen and (max-width: 1200px){
+        font-size: 3em;
+    }
+
+    @media screen and (max-width: 800px){
+        font-size: 2em;
+    }
+}
+
+h3{
+    font-weight: bold;
+    margin-bottom: 1.2em;
+    font-size: 1.2em;
+}
+
+.oculto{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
+.pagina div~div{
+    margin: 2em;
+}
+
+img{
+    width: 100%;
+    border-radius: 0.4em;
+}
+
+select{
+    font-size: 1.2rem;
+}
+
+header{
+    padding: 1em;
+    display: flex; 
+    font-family: $letra-titulos;
+    justify-content: center;
+    @media screen and (max-width: 800px){
+        flex-direction: column;
+    }
+}
+
+iframe{
+    width: 70%;
+    height: 315px;
+
+    @media screen and (max-width: 800px){
+        width: 100%;
+        height: 280px;
+    }
+}
+
+.pagina {
+    font-family: $letra-familia;
+    width: $ancho;
+    margin: 4em auto;
+    background-color: $color-fondo;
+}
+
+.cab--img{
+    width: 20%;
+    @media screen and (max-width: 800px){
+        width: 60%;
+        margin: 2em auto;
+    }
+}
+
+nav{ 
+    border-bottom: white 0.2em solid;
+    padding: 2em;
+
+    input, label{
+        display: none;
+    }
+
+    ul{
+        display: flex;
+        text-align: justify;
+        justify-content: flex-end;
+
+        li{
+            a{
+                text-decoration: none;
+                color: $color-letra;
+                border-radius: 1em;
+                padding: 1em;
+                transition-property: color, border-left, border-top;
+                transition-duration: 0.2s;
+                font-weight: bold;
+
+                &:hover, &:active{
+                    color: white;
+                    background-color: $color-letra; 
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 800px){
+        label{
+            display: block;
+            margin: 1em;
+            margin-bottom: 1.5em;
+        }
+
+        input:checked ~ label::before{
+            content: "\ea0f";
+        }
+
+        ul{
+            display: none;
+            left: -12em;
+        }
+
+        @keyframes menu{
+            from {left: -12em;}
+            to {left: 4em;}
+        }
+
+        input:checked ~ ul{
+            display: block;
+            left: 4em;
+            animation-name: menu;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            align-self: center;
+        }
+
+        ul, input:checked ~ ul{
+            position: absolute;
+            flex-direction: column;
+            justify-content: none;
+            background-color: $color-menuHamb;
+            border-radius: 0.8em;
+
+            li{
+                margin: 1.5em;
+
+                a{
+                    padding: 0.3em;
+                    color: white;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+section{
+    padding: 4em 0;
+    text-align: center;
+    background-color: azure;
+
+    form{
+        font-size: 1.5em;
+
+        input{
+            padding: 0.5em;
+            margin-right: 2em;
+        }
+        @media screen and (max-width: 800px){
+            width: 40%;
+            margin: auto;
+        }
+    }
+}
+ input{
+    @media screen and (max-width: 800px){
+        margin: 2em 0;
+    }
+ }
+
+.seccion--btn{
+    margin: 1em 0.4em;
+    width: $ancho;
+    text-align: right;
+}
+
+button{
+    border-radius: 0.1em;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    margin: 1rem 0.5rem;
+    background-color:rgb(32, 153, 153);
+
+    &:hover{
+        background-color: aquamarine;
+    }
+}
+
+
+footer{
+    border-top: black 0.1em dashed;
+    color: $color-letra-pie;
+    text-align: right;
+    padding: 0.5em 1em;
+
+    @media screen and (max-width: 800px){
+        font-size: 0.8em;
+    }
+}
+
+.datos--img{
+    width: 50%;
+    margin: 3em auto;
+
+    &:hover{
+        transform: scale(1.2);
+        transition: 2s;
+    }
+}
+
+.listarCitas{
+    display: flex;
+    flex-direction: column;
+
+    button{
+        width: 30%;
+        margin: 1em auto;
+    }
+}

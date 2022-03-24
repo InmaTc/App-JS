@@ -1,0 +1,286 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'lobster';
+  src: url("../Lobster/Lobster-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?eg9oc");
+  src: url("../fonts/icomoon.eot?eg9oc#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?eg9oc") format("truetype"), url("../fonts/icomoon.woff?eg9oc") format("woff"), url("../fonts/icomoon.svg?eg9oc#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-menu:before {
+  content: "\e9bd"; }
+
+.icon-cross:before {
+  content: "\ea0f"; }
+
+h1 {
+  font-size: 4em;
+  padding: 3rem; }
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+  font-family: lobster; }
+  @media screen and (max-width: 1200px) {
+    h2 {
+      font-size: 3em; } }
+  @media screen and (max-width: 800px) {
+    h2 {
+      font-size: 2em; } }
+
+h3 {
+  font-weight: bold;
+  margin-bottom: 1.2em;
+  font-size: 1.2em; }
+
+.oculto {
+  display: none; }
+
+.visible {
+  display: block; }
+
+.pagina div ~ div {
+  margin: 2em; }
+
+img {
+  width: 100%;
+  border-radius: 0.4em; }
+
+select {
+  font-size: 1.2rem; }
+
+header {
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: lobster;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  @media screen and (max-width: 800px) {
+    header {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+
+iframe {
+  width: 70%;
+  height: 315px; }
+  @media screen and (max-width: 800px) {
+    iframe {
+      width: 100%;
+      height: 280px; } }
+
+.pagina {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 80%;
+  margin: 4em auto;
+  background-color: rgba(99, 219, 213, 0.637); }
+
+.cab--img {
+  width: 20%; }
+  @media screen and (max-width: 800px) {
+    .cab--img {
+      width: 60%;
+      margin: 2em auto; } }
+
+nav {
+  border-bottom: white 0.2em solid;
+  padding: 2em; }
+  nav input, nav label {
+    display: none; }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: justify;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+    nav ul li a {
+      text-decoration: none;
+      color: #411366;
+      border-radius: 1em;
+      padding: 1em;
+      -webkit-transition-property: color, border-left, border-top;
+      transition-property: color, border-left, border-top;
+      -webkit-transition-duration: 0.2s;
+              transition-duration: 0.2s;
+      font-weight: bold; }
+      nav ul li a:hover, nav ul li a:active {
+        color: white;
+        background-color: #411366; }
+  @media screen and (max-width: 800px) {
+    nav label {
+      display: block;
+      margin: 1em;
+      margin-bottom: 1.5em; }
+    nav input:checked ~ label::before {
+      content: "\ea0f"; }
+    nav ul {
+      display: none;
+      left: -12em; }
+    @-webkit-keyframes menu {
+      from {
+        left: -12em; }
+      to {
+        left: 4em; } }
+    @keyframes menu {
+      from {
+        left: -12em; }
+      to {
+        left: 4em; } }
+    nav input:checked ~ ul {
+      display: block;
+      left: 4em;
+      -webkit-animation-name: menu;
+              animation-name: menu;
+      -webkit-animation-duration: 1s;
+              animation-duration: 1s;
+      -webkit-animation-timing-function: ease-in-out;
+              animation-timing-function: ease-in-out;
+      -ms-flex-item-align: center;
+          align-self: center; }
+    nav ul, nav input:checked ~ ul {
+      position: absolute;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: none;
+          -ms-flex-pack: none;
+              justify-content: none;
+      background-color: rgba(73, 73, 73, 0.747);
+      border-radius: 0.8em; }
+      nav ul li, nav input:checked ~ ul li {
+        margin: 1.5em; }
+        nav ul li a, nav input:checked ~ ul li a {
+          padding: 0.3em;
+          color: white;
+          font-weight: bold; } }
+
+section {
+  padding: 4em 0;
+  text-align: center;
+  background-color: azure; }
+  section form {
+    font-size: 1.5em; }
+    section form input {
+      padding: 0.5em;
+      margin-right: 2em; }
+    @media screen and (max-width: 800px) {
+      section form {
+        width: 40%;
+        margin: auto; } }
+
+@media screen and (max-width: 800px) {
+  input {
+    margin: 2em 0; } }
+
+.seccion--btn {
+  margin: 1em 0.4em;
+  width: 80%;
+  text-align: right; }
+
+button {
+  border-radius: 0.1em;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  margin: 1rem 0.5rem;
+  background-color: #209999; }
+  button:hover {
+    background-color: aquamarine; }
+
+footer {
+  border-top: black 0.1em dashed;
+  color: #839689;
+  text-align: right;
+  padding: 0.5em 1em; }
+  @media screen and (max-width: 800px) {
+    footer {
+      font-size: 0.8em; } }
+
+.datos--img {
+  width: 50%;
+  margin: 3em auto; }
+  .datos--img:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-transition: 2s;
+    transition: 2s; }
+
+.listarCitas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .listarCitas button {
+    width: 30%;
+    margin: 1em auto; }

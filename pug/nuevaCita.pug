@@ -1,0 +1,29 @@
+extends paciente 
+append variables 
+  - var archivo = "js/paciente.js" 
+
+block contenido 
+  h2 Nueva cita 
+  .nuevaCita 
+    .nuevaCita-especialidad 
+      h3 Especialidad
+      form(id="formEspecialidad")        
+        select#selectEspecialidad(name="selectEspecialidad") 
+          option(value="-1" selected="selected") Seleccione especialidad 
+    .nuevaCita-medico
+      h3 Médicos de esta especialidad
+      form(id="formEspecialidad" onsubmit="return false")
+        select#selectMedicos(name="selectMedicos") 
+          option(value="-1" selected="selected") Seleccione el médico
+        input#inputFecha(type="date", name="inputFecha")
+        button#btnHoras(class="btnHoras") Ver
+    .nuevaCita-hora 
+      h3 Horas disponibles 
+      form(id="formHoras"  onsubmit="return false")
+        select#selectHoras(name="selectHoras") 
+          option(value="-1" selected="selected") Seleccione la hora
+        button#btnConfirmar(class="btnConfirmar") Pedir cita
+  .msg 
+    label(id ="msgProceso" class="oculto")
+
+

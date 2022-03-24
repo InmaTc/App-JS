@@ -1,0 +1,13 @@
+extends plantilla
+append variables 
+  - var archivo = "js/index.js" 
+block contenido
+    form(id="form1")
+        label(for="usuario") Usuario: 
+        input(type="text" id="usuario" placeholder="Introduce un usuario")
+        label(for="clave") Contraseña: 
+        input(type="password" id="clave" placeholder="Introduce una contraseña")
+        .seccion--btn 
+            button(type="button" id="btnEntrar") Entrar 
+        label(id ="msgError" class="oculto")
+       

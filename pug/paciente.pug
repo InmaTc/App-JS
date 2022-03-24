@@ -1,0 +1,20 @@
+extends plantilla
+append variables 
+  - var archivo = "js/paciente.js"
+
+block menu 
+  h3#nombUsuario
+  input#chkMenu(type="checkbox")
+  label.icon-menu.subir(for="chkMenu") 
+  ul.menu--lista
+    li
+      a(href="nuevaCita.html") Nueva Cita
+    li
+      a(href="listarCitas.html") Mis citas
+    li
+      a(href="contacto.html") Contacto
+    li
+      a(href="cerrarSesion.html") Cerrar sesión
+
+block contenido 
+  p ¡Bienvenido a nuestra aplicación de citas!
